@@ -1,7 +1,7 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('milkshop.urls')),  # Đặt milkshop làm trang chủ
+    path('', views.milk_shop, name='home'),
+    path('members/', views.milk_shop, name='members'),
 ]
