@@ -1,0 +1,16 @@
+{% extends 'app_home/base.html' %}
+{% load static %}
+
+{% block title %}Chuyển khoản ngân hàng{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Chuyển khoản ngân hàng</h2>
+    <p>Vui lòng quét mã QR bên dưới để thanh toán đơn hàng.</p>
+    <img src="{% static 'app_home/images/qr_code.png' %}" alt="QR Code">
+    
+    <p><strong>Số tài khoản:</strong> 123456789</p>
+    <p><strong>Ngân hàng:</strong> Vietcombank</p>
+    <p><strong>Chủ tài khoản:</strong> Nguyễn Văn A</p>
+</div>
+{% endblock %}
