@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .container { width: 350px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h2 { text-align: center; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+        button { width: 100%; padding: 10px; background: #696cff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #5a5fd1; }
+        .link { text-align: center; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container" id="register">
+        <h2>Đăng ký</h2>
+        <input type="text" id="register-Username" placeholder="Username">
+        <input type="text" id="register-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p class="link">New here? <a href="">Create an account</a></p>
+    </div>
+</body>
+</html>
