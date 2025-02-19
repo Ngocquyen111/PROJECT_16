@@ -1,0 +1,25 @@
+{% extends 'app_home/base.html' %}
+
+{% block title %}Danh sách Voucher{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Danh sách Voucher</h2>
+    <div class="row">
+        {% for voucher in vouchers %}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ voucher.code }}</h5>
+                    <p class="card-text">Giảm {{ voucher.discount }}%</p>
+                    <p class="card-text">HSD: {{ voucher.valid_to }}</p>
+                    <a href="{% url 'voucher_detail' voucher.id %}" class="btn btn-primary">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Chưa có voucher nào!</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
