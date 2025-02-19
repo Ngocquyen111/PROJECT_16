@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Quản lý bài viết</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .article {
+            margin-bottom: 15px;
+        }
+        .back-link {
+            margin-top: 20px;
+            display: inline-block;
+            color: #3498db;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="./abc.png" alt="Cửa hàng sữa" style="inline-size:1490px; block-size:100px;">
+</header>
+<nav>
+    <div class="container">
+        <ul>
+            <li><a href=""><img style="inline-size: 120px" src="./cde.png" alt=""></a></li>
+            <li><a href="">Tìm siêu thị<i class="fa-solid fa-location-dot"></i></a></li>
+            <li><input type="text" placeholder="Bạn tìm gì..."><i class="fa-solid fa-magnifying-glass"></i></li>
+            <li><a href=""><button><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng</button></a></li>
+            <li><a href="">Lịch sử đơn hàng</a></li>
+            <li><a href="">Ưu đãi</a></li>
+            <li><a href="">Siêu tốc 1h</a></li>
+            <li><a href="">Hỏi đáp</a></li>
+            <li><a href="#" onclick="openModal()">Đăng nhập / Đăng ký</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Danh sách bài viết -->
+<section class="container" id="content">
+    <h1>Danh sách bài viết</h1>
+    <div class="article">
+        <a href="#" onclick="viewArticle(1)">Bài viết 1: Tầm quan trọng của sữa mẹ</a>
+    </div>
+    <div class="article">
+        <a href="#" onclick="viewArticle(2)">Bài viết 2: Lựa chọn sữa công thức phù hợp</a>
+    </div>
+    <div class="article">
+        <a href="#" onclick="viewArticle(3)">Bài viết 3: Dinh dưỡng cho mẹ bầu</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        <p>&copy; 2025 Cửa hàng sữa. Tất cả quyền được bảo lưu.</p>
+    </div>
+</footer>
+
+<script>
+    // Danh sách bài viết
+    const articles = [
+        { id: 1, title: "Tầm quan trọng của sữa mẹ", content: "Sữa mẹ là nguồn dinh dưỡng tốt nhất cho trẻ sơ sinh và trẻ nhỏ..." },
+        { id: 2, title: "Lựa chọn sữa công thức phù hợp", content: "Việc chọn sữa công thức phù hợp phụ thuộc vào nhu cầu dinh dưỡng của bé..." },
+        { id: 3, title: "Dinh dưỡng cho mẹ bầu", content: "Chế độ ăn uống phù hợp trong thai kỳ giúp mẹ bầu khỏe mạnh và bé phát triển toàn diện..." }
+    ];
+
+    // Hiển thị chi tiết bài viết
+    function viewArticle(id) {
+        const article = articles.find(a => a.id === id);
+        const contentDiv = document.getElementById('content');
+
+        if (article) {
+            contentDiv.innerHTML = `
+                <h1>${article.title}</h1>
+                <p>${article.content}</p>
+                <span class="back-link" onclick="goBack()">Quay lại danh sách bài viết</span>
+            `;
+        } else {
+            contentDiv.innerHTML = `
+                <h1>Bài viết không tồn tại</h1>
+                <span class="back-link" onclick="goBack()">Quay lại danh sách bài viết</span>
+            `;
+        }
+    }
+
+    // Quay lại danh sách bài viết
+    function goBack() {
+        const contentDiv = document.getElementById('content');
+        contentDiv.innerHTML = `
+            <h1>Danh sách bài viết</h1>
+            <div class="article">
+                <a href="#" onclick="viewArticle(1)">Bài viết 1: Tầm quan trọng của sữa mẹ</a>
+            </div>
+            <div class="article">
+                <a href="#" onclick="viewArticle(2)">Bài viết 2: Lựa chọn sữa công thức phù hợp</a>
+            </div>
+            <div class="article">
+                <a href="#" onclick="viewArticle(3)">Bài viết 3: Dinh dưỡng cho mẹ bầu</a>
+            </div>
+        `;
+    }
+</script>
+</body>
+</html>
