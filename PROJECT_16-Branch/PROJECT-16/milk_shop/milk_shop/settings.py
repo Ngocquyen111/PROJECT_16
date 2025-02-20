@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'milk_shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'milk_shop',  # Thay bằng tên CSDL của bạn
-        'USER': 'sa',  # Tên tài khoản đăng nhập SQL Server
-        'PASSWORD': 'phamtanthong',  # Mật khẩu
+        'NAME': 'milk_shop1',  
+        'USER': 'sa',  
+        'PASSWORD': 'phamtanthong', 
         'HOST': 'localhost',  # Hoặc tên máy chủ SQL Server
         # 'PORT': '1433',  # Mặc định để trống (SQL Server thường dùng cổng 1433)
         'OPTIONS': {
@@ -132,12 +132,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< HEAD
-=======
-
-AUTH_USER_MODEL = 'milk_shopshop.CustomUser'
-
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'login'
->>>>>>> d5399da (Them code)
